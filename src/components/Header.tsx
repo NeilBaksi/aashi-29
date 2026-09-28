@@ -63,7 +63,7 @@ export default function Header() {
       >
         <a
           href="#home"
-          className="font-display text-lg font-semibold text-ink tracking-tight"
+          className="font-script text-2xl tracking-wide text-ink"
           onClick={() => setOpen(false)}
         >
           Twenty-Fine

@@ -94,7 +94,7 @@ export default function Itinerary() {
                 selectedDay === day.id ? 'bg-ink text-paper' : 'bg-paper-card text-ink-soft hover:text-ink',
               )}
             >
-              <span className="font-display text-sm">{DAY_TAB_LABEL[day.id]}</span>
+              <span className="font-display text-sm font-bold">{DAY_TAB_LABEL[day.id]}</span>
               {liveDay === day.id && (
                 <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-apricot-deep">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-apricot-deep" aria-hidden />

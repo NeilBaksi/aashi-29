@@ -21,8 +21,8 @@ export default function Hero() {
       className="grain relative overflow-hidden bg-paper px-5 pb-20 pt-28 md:pb-28 md:pt-36"
     >
       <div className="relative mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center md:gap-16">
-        {/* Photo — mobile: stacked above text, full width. Desktop: right side, tilted/framed. */}
-        <motion.div {...fadeUp(0)} className="order-1 md:order-2">
+        {/* Photo — mobile: stacked below text, full width. Desktop: right side, tilted/framed. */}
+        <motion.div {...fadeUp(0)} className="order-2">
           <div className="mx-auto max-w-sm -rotate-3 rounded-2xl border-8 border-paper-card bg-paper-card p-2 shadow-card md:mx-0 md:max-w-md">
             <img
               src={`${import.meta.env.BASE_URL}img/hero-aashi.jpg`}
@@ -33,23 +33,23 @@ export default function Hero() {
         </motion.div>
 
         {/* Kinetic type + copy */}
-        <div className="order-2 md:order-1">
+        <div className="order-1">
           <motion.p {...fadeUp(1)} className="font-medium text-ink-soft">
             {hero.eyebrow}
           </motion.p>
 
           {/* One loud moment: hand-brush script, not the editorial serif used everywhere
               else on the page — this is the party invite, the rest of the site is the itinerary. */}
-          <h1 id="hero-heading" className="mt-2 font-script leading-[1.05] text-ink">
+          <h1 id="hero-heading" className="mt-3 font-script leading-[1.15] tracking-wide text-ink">
             <motion.span {...fadeUp(2)} className="block text-5xl sm:text-6xl">
               {hero.titleLine1}
             </motion.span>
-            <motion.span {...fadeUp(3)} className="-mt-1 block text-5xl sm:-mt-2 sm:text-6xl">
+            <motion.span {...fadeUp(3)} className="block text-5xl sm:text-6xl">
               {hero.titleLine2}
             </motion.span>
             <motion.span
               {...fadeUp(4)}
-              className="mt-1 block text-7xl text-apricot-deep sm:-mt-3 sm:text-8xl md:text-9xl"
+              className="mt-2 block text-7xl text-apricot-deep sm:mt-1 sm:text-8xl md:text-9xl"
             >
               {/* Non-breaking hyphen (U+2011) at render time only — content.ts keeps the
                   plain "-" verbatim; this just stops the compound word wrapping mid-hyphen
