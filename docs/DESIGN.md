@@ -32,11 +32,38 @@ Contrast: `ink` on `paper` and `paper-card` clears AA for body text (ink
 below 14px on `paper-deep` — check before shipping new combinations.
 
 ## Type
-- **Display** — Fraunces (variable, optical-size + weight axis), for the
-  hero numerals/headings, day headings, house-rule numbers. Loaded via
-  Google Fonts `<link>` in `index.html` (matches the Ask project's pattern —
-  no extra `@fontsource` dependency needed for one weight range).
-- **Body/UI** — Figtree, humanist sans, for paragraphs, nav, buttons, labels.
+Revised from an initial Fraunces + Figtree pairing — tasteful but the exact
+pairing every "editorial AI site" reaches for by default. Replaced with a
+combination that's less generic and gives the hero somewhere to be genuinely
+loud, the way the original Canva site's hand-lettered title was.
+
+- **Display** (`font-display`) — Petrona, a warm editorial serif with real
+  character in its `a`/`g` (wght 400–800 + italic), for section headings,
+  day headings, house-rule numbers, dress-code titles. Not Fraunces —
+  distinctive without being a display gimmick, holds up at both a 96px hero
+  numeral and a 16px card heading.
+- **Body/UI** (`font-sans`) — Schibsted Grotesk, a newspaper-designed grotesk
+  with rounder terminals than the Inter/Figtree/DM Sans default, for
+  paragraphs, nav, buttons, labels.
+- **Script** (`font-script`) — Barracuda Script, ONE loud accent face
+  (Neil's own font, picked to match the original Canva site's hand-lettered
+  title energy), used only for the hero's three-line title (`Hero.tsx`) and
+  the closing signature ("AASHI x" in `Important.tsx`) as a bookend. This is
+  the site's single permitted "party invite" moment — everywhere else stays
+  in the editorial voice per the anti-slop thesis above. Never use
+  `font-script` for body copy, nav, or anything that needs to stay
+  comfortably legible at small sizes — brush scripts don't scale down.
+  **Self-hosted**, not a Google Font: TTF lives at
+  `src/assets/fonts/BarracudaScript-Regular.ttf`, `@font-face` in
+  `src/index.css` (relative `url()` so Vite hashes/bases it correctly — a
+  raw `public/fonts/...` path breaks under the GitHub Pages `/aashi-29/`
+  base, same trap the hero/stay photos were originally in, fixed alongside
+  this). **License:** confirm this font's license permits web-embedding
+  before a public launch — a "desktop" font purchase often doesn't include
+  webfont rights; check the vendor's terms or ask them directly.
+- Petrona and Schibsted Grotesk load via one Google Fonts `<link>` in
+  `index.html` (matches the Ask project's pattern — no extra `@fontsource`
+  dependency for those two).
 - Tabular numerals for the countdown and itinerary times (`font-variant-
   numeric: tabular-nums` utility where digits change on a timer).
 

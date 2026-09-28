@@ -74,7 +74,8 @@ export default function Important() {
           <p className="mt-8 font-display text-base tracking-[0.15em] text-apricot">
             {thankYou.cta}
           </p>
-          <p className="mt-4 font-display text-4xl italic text-paper">{thankYou.signature}</p>
+          {/* Bookends the hero's brush-script moment — same voice, last word. */}
+          <p className="mt-4 font-script text-5xl text-paper">{thankYou.signature}</p>
         </motion.div>
       </div>
     </section>

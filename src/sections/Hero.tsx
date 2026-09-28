@@ -25,7 +25,7 @@ export default function Hero() {
         <motion.div {...fadeUp(0)} className="order-1 md:order-2">
           <div className="mx-auto max-w-sm -rotate-3 rounded-2xl border-8 border-paper-card bg-paper-card p-2 shadow-card md:mx-0 md:max-w-md">
             <img
-              src="/img/hero-aashi.jpg"
+              src={`${import.meta.env.BASE_URL}img/hero-aashi.jpg`}
               alt="Aashi celebrating with a birthday cake"
               className="aspect-[4/5] w-full rounded-lg object-cover"
             />
@@ -38,18 +38,23 @@ export default function Hero() {
             {hero.eyebrow}
           </motion.p>
 
-          <h1 id="hero-heading" className="mt-4 font-display leading-[0.95] text-ink">
-            <motion.span {...fadeUp(2)} className="block text-4xl font-medium sm:text-5xl">
+          {/* One loud moment: hand-brush script, not the editorial serif used everywhere
+              else on the page — this is the party invite, the rest of the site is the itinerary. */}
+          <h1 id="hero-heading" className="mt-2 font-script leading-[1.05] text-ink">
+            <motion.span {...fadeUp(2)} className="block text-5xl sm:text-6xl">
               {hero.titleLine1}
             </motion.span>
-            <motion.span {...fadeUp(3)} className="block text-4xl font-medium sm:text-5xl">
+            <motion.span {...fadeUp(3)} className="-mt-1 block text-5xl sm:-mt-2 sm:text-6xl">
               {hero.titleLine2}
             </motion.span>
             <motion.span
               {...fadeUp(4)}
-              className="block text-6xl font-bold text-apricot-deep sm:text-7xl md:text-8xl"
+              className="mt-1 block text-7xl text-apricot-deep sm:-mt-3 sm:text-8xl md:text-9xl"
             >
-              {hero.titleLine3}
+              {/* Non-breaking hyphen (U+2011) at render time only — content.ts keeps the
+                  plain "-" verbatim; this just stops the compound word wrapping mid-hyphen
+                  at hero display sizes. */}
+              {hero.titleLine3.replace('-', '‑')}
             </motion.span>
           </h1>
 

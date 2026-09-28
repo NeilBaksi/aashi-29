@@ -21,8 +21,11 @@ export default {
         'pine-light': '#3f6350',
       },
       fontFamily: {
-        display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
-        sans: ['"Figtree"', 'system-ui', 'sans-serif'],
+        display: ['"Petrona"', 'ui-serif', 'Georgia', 'serif'],
+        sans: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+        // Hero title only — one loud brush-script moment, never body/UI text.
+        // Self-hosted TTF, @font-face in src/index.css.
+        script: ['"Barracuda Script"', 'cursive'],
       },
       boxShadow: {
         card: '0 1px 2px rgba(68,24,40,0.08), 0 8px 24px -12px rgba(68,24,40,0.25)',

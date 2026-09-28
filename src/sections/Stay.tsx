@@ -46,7 +46,7 @@ export default function Stay() {
           <div ref={parallaxRef} className="overflow-hidden rounded-2xl shadow-card">
             <motion.img
               style={{ y }}
-              src="/img/stay-sunset.jpg"
+              src={`${import.meta.env.BASE_URL}img/stay-sunset.jpg`}
               alt="Sunset picnic on the deck at the house"
               className="h-[420px] w-full scale-110 object-cover"
             />
