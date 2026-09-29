@@ -42,9 +42,10 @@ loud, the way the original Canva site's hand-lettered title was.
   day headings, house-rule numbers, dress-code titles. Not Fraunces —
   distinctive without being a display gimmick, holds up at both a 96px hero
   numeral and a 16px card heading.
-- **Body/UI** (`font-sans`) — Schibsted Grotesk, a newspaper-designed grotesk
-  with rounder terminals than the Inter/Figtree/DM Sans default, for
-  paragraphs, nav, buttons, labels.
+- **Body/UI** (`font-sans`) — Nunito, a soft rounded humanist sans (wght
+  400–800), for paragraphs, nav, buttons, labels. Replaced Schibsted Grotesk
+  — too sharp/newspapery for this theme; Nunito's rounded terminals sit
+  warmer against Petrona's serif curves and the alpine-editorial mood.
 - **Script** (`font-script`) — Barracuda Script, ONE loud accent face
   (Neil's own font, picked to match the original Canva site's hand-lettered
   title energy), used only for the hero's three-line title (`Hero.tsx`) and
@@ -61,9 +62,9 @@ loud, the way the original Canva site's hand-lettered title was.
   this). **License:** confirm this font's license permits web-embedding
   before a public launch — a "desktop" font purchase often doesn't include
   webfont rights; check the vendor's terms or ask them directly.
-- Petrona and Schibsted Grotesk load via one Google Fonts `<link>` in
-  `index.html` (matches the Ask project's pattern — no extra `@fontsource`
-  dependency for those two).
+- Petrona and Nunito load via one Google Fonts `<link>` in `index.html`
+  (matches the Ask project's pattern — no extra `@fontsource` dependency
+  for those two).
 - Tabular numerals for the countdown and itinerary times (`font-variant-
   numeric: tabular-nums` utility where digits change on a timer).
 

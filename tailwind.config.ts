@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         display: ['"Petrona"', 'ui-serif', 'Georgia', 'serif'],
-        sans: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+        sans: ['"Nunito"', 'system-ui', 'sans-serif'],
         // Hero title only — one loud brush-script moment, never body/UI text.
         // Self-hosted TTF, @font-face in src/index.css.
         script: ['"Barracuda Script"', 'cursive'],
