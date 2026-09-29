@@ -53,5 +53,5 @@ phones, several checking the itinerary live during the weekend itself
 ## Open items
 - Google Drive folder URL — placeholder in `content.ts` (`memoriesDrive`)
   until Neil supplies the real "anyone with link: editor" link.
-- Final generated images — prompts in `docs/DESIGN.md`; site ships with
-  palette-toned placeholder blocks until images land.
+- Confirm Barracuda Script's web-embedding license before public launch (see
+  `docs/DESIGN.md`).

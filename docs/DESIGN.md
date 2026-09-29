@@ -121,9 +121,13 @@ Shared suffix for every prompt below:
     window light. 4:3.
 11. **Texture tile** — plain gouache paper texture, seamless. 1:1.
 
-Export ≥2000px long edge PNG; compress to WebP/AVIF (`sips`/`cwebp`) before
-committing to `public/img/`. Until generated, sections use flat
-`paper-card`/`pine` colour blocks with the `.grain` texture — never a broken
+The generated illustrations are in `public/img/` as optimized JPEGs; original
+PNG generations are retained in `design-assets/generated/`. The itinerary uses
+the road-trip, mountain-day, and Sunday illustrations; Food uses the BBQ,
+cake, and breakfast illustrations; Pack uses the packing flat-lay. The hero
+backdrop, birthday dinner, after-dinner, and texture tile remain available for
+future layout use. Until an illustration is wired into a section, keep the
+existing flat `paper-card`/`pine` treatment with `.grain` — never a broken
 image or a stock placeholder.
 
 ## Accessibility (vercel-skills pass)

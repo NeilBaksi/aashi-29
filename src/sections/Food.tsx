@@ -10,6 +10,8 @@ const fadeUp = (i: number) => ({
 })
 
 export default function Food() {
+  const dayArt = ['04-bbq-night.jpg', '08-cake.jpg', '03-breakfast.jpg']
+
   return (
     <section id="food" aria-label={food.heading} className="grain px-5 py-20 md:py-28">
       <div className="relative mx-auto max-w-6xl">
@@ -33,6 +35,12 @@ export default function Food() {
               {...fadeUp(2 + i)}
               className="border-paper-deep py-2 md:border-dashed md:px-8 md:py-8 md:first:pl-8 md:last:pr-8 md:[&:not(:last-child)]:border-r"
             >
+              <img
+                src={`${import.meta.env.BASE_URL}img/${dayArt[i]}`}
+                alt=""
+                className="mb-5 aspect-[16/9] w-full rounded-xl bg-paper-card object-contain"
+                loading="lazy"
+              />
               <h3 className="font-display text-xl font-semibold text-ink">{d.day}</h3>
               <ul className="mt-3 space-y-1.5 text-ink-soft">
                 {d.items.map((item) => (

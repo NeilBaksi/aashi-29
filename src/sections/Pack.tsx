@@ -54,9 +54,18 @@ export default function Pack() {
           {pack.heading}
         </motion.h2>
 
+        <motion.div {...fadeUp(1)} className="mt-8 overflow-hidden rounded-2xl bg-paper-card shadow-card">
+          <img
+            src={`${import.meta.env.BASE_URL}img/09-packing-flat-lay.jpg`}
+            alt="A warm-weather and cold-weather mountain weekend packing flat-lay"
+            className="aspect-[2/1] w-full bg-paper-card object-contain sm:aspect-[3/1]"
+            loading="lazy"
+          />
+        </motion.div>
+
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           <motion.div
-            {...fadeUp(1)}
+            {...fadeUp(2)}
             className="rounded-2xl bg-paper-card p-6 shadow-card md:p-8"
           >
             <h3 className="font-display text-xl font-semibold text-ink">{pack.weatherHeading}</h3>
@@ -81,7 +90,7 @@ export default function Pack() {
           </motion.div>
 
           <motion.div
-            {...fadeUp(2)}
+            {...fadeUp(3)}
             className="rounded-2xl bg-paper-card p-6 shadow-card md:p-8"
           >
             <h3 className="font-display text-xl font-semibold text-ink">{pack.adventureHeading}</h3>
@@ -91,7 +100,7 @@ export default function Pack() {
         </div>
 
         <motion.h3
-          {...fadeUp(3)}
+          {...fadeUp(4)}
           className="mt-14 font-display text-2xl font-semibold tracking-tight text-ink"
         >
           {pack.dressCodeHeading}
@@ -100,7 +109,7 @@ export default function Pack() {
           {pack.dressCode.map((d, i) => (
             <motion.div
               key={d.day}
-              {...fadeUp(4 + i)}
+              {...fadeUp(5 + i)}
               className="rounded-2xl bg-paper-card p-5 shadow-card"
             >
               <p className="text-xs font-semibold tracking-[0.15em] text-ink-soft">{d.day}</p>
@@ -110,7 +119,7 @@ export default function Pack() {
           ))}
         </div>
 
-        <motion.div {...fadeUp(8)} className="mt-10">
+        <motion.div {...fadeUp(9)} className="mt-10">
           <h3 className="font-display text-xl font-semibold text-ink">{pack.dinnerDressCodeHeading}</h3>
           <div className="mt-4 flex flex-wrap gap-6">
             {pack.dinnerSwatches.map((s) => (
@@ -126,7 +135,7 @@ export default function Pack() {
           </div>
         </motion.div>
 
-        <motion.div {...fadeUp(9)} className="mt-14 rounded-2xl bg-paper-card p-6 shadow-card md:p-8">
+        <motion.div {...fadeUp(10)} className="mt-14 rounded-2xl bg-paper-card p-6 shadow-card md:p-8">
           <h3 className="font-display text-xl font-semibold text-ink">Packing checklist</h3>
           <ul className="mt-4 divide-y divide-paper-deep">
             {packingChecklist.map((item) => {

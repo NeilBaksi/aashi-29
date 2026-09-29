@@ -24,6 +24,12 @@ const DAY_TAB_LABEL: Record<ItineraryDay['id'], string> = {
   sun: 'Sun 4 Oct',
 }
 
+const DAY_ART: Record<ItineraryDay['id'], { src: string; alt: string }> = {
+  fri: { src: '02-road-trip.jpg', alt: '' },
+  sat: { src: '05-mountain-day.jpg', alt: '' },
+  sun: { src: '10-sunday.jpg', alt: '' },
+}
+
 /** The day id "now" falls inside, or null if outside the event weekend entirely. */
 function liveDayId(now: Date): ItineraryDay['id'] | null {
   const t = now.getTime()
@@ -119,6 +125,15 @@ export default function Itinerary() {
             <p className="mt-1 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">
               {activeDay.subheading}
             </p>
+
+            <div className="mt-6 overflow-hidden rounded-2xl bg-paper-card shadow-card">
+              <img
+                src={`${import.meta.env.BASE_URL}img/${DAY_ART[activeDay.id].src}`}
+                alt={DAY_ART[activeDay.id].alt}
+                className="aspect-[16/7] w-full bg-paper-card object-contain sm:aspect-[2.4/1]"
+                loading="lazy"
+              />
+            </div>
 
             <ol className="mt-6 border-l border-paper-deep pl-6">
               {activeDay.items.map((item, i) => {
