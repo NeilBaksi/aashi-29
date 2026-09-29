@@ -158,7 +158,8 @@ export default function Itinerary() {
                   >
                     <span
                       className={clsx(
-                        'absolute -left-[29px] top-4 h-2.5 w-2.5 rounded-full border-2 border-paper',
+                        'absolute -left-[29px] h-2.5 w-2.5 rounded-full border-2 border-paper',
+                        item.time ? 'top-8' : 'top-7',
                         isNow ? 'animate-pulse bg-apricot-deep' : 'bg-paper-deep',
                       )}
                       aria-hidden
@@ -169,14 +170,14 @@ export default function Itinerary() {
                         isNow && 'border border-apricot-deep bg-paper-card shadow-card',
                       )}
                     >
-                      <div className={clsx('flex gap-4', beatImage ? 'items-center justify-between' : 'items-baseline')}>
+                      <div className={clsx('flex gap-4', beatImage ? 'items-start justify-between' : 'items-baseline')}>
                         <div className="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
                           {item.time && (
-                            <span className="font-display text-sm text-ink-soft [font-variant-numeric:tabular-nums]">
+                            <span className="font-display text-lg text-ink [font-variant-numeric:tabular-nums]">
                               {item.time}
                             </span>
                           )}
-                          <span className={clsx('text-ink', item.time ? 'font-medium' : 'text-sm text-ink-soft')}>
+                          <span className={clsx('text-lg text-ink', item.time && 'font-medium')}>
                             {item.text}
                           </span>
                           {isNow && (
