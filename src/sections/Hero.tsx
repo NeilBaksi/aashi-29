@@ -43,7 +43,7 @@ export default function Hero() {
 							<motion.span {...fadeUp(2)}>{hero.titleLine1}</motion.span>{" "}
 							<motion.span {...fadeUp(3)}>{hero.titleLine2}</motion.span>
 						</span>
-						<motion.span {...fadeUp(4)} className="mt-2 block text-6xl text-apricot-deep sm:mt-1 sm:text-7xl md:text-8xl">
+						<motion.span {...fadeUp(4)} className="mt-4 block text-6xl text-apricot-deep sm:mt-4 sm:text-7xl md:mt-6 md:text-8xl">
 							{/* Non-breaking hyphen (U+2011) at render time only — content.ts keeps the
                   plain "-" verbatim; this just stops the compound word wrapping mid-hyphen
                   at hero display sizes. */}
