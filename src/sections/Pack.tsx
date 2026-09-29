@@ -54,11 +54,11 @@ export default function Pack() {
           {pack.heading}
         </motion.h2>
 
-        <motion.div {...fadeUp(1)} className="mt-8 overflow-hidden rounded-2xl bg-paper-card shadow-card">
+        <motion.div {...fadeUp(1)} className="mt-8 overflow-hidden rounded-2xl shadow-card">
           <img
             src={`${import.meta.env.BASE_URL}img/09-packing-flat-lay.jpg`}
             alt="A warm-weather and cold-weather mountain weekend packing flat-lay"
-            className="aspect-[2/1] w-full bg-paper-card object-contain sm:aspect-[3/1]"
+            className="h-48 w-full object-cover sm:h-64"
             loading="lazy"
           />
         </motion.div>

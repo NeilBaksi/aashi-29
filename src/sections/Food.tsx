@@ -13,7 +13,16 @@ export default function Food() {
   const dayArt = ['04-bbq-night.jpg', '08-cake.jpg', '03-breakfast.jpg']
 
   return (
-    <section id="food" aria-label={food.heading} className="grain px-5 py-20 md:py-28">
+    <section
+      id="food"
+      aria-label={food.heading}
+      className="bg-paper px-5 py-20 md:py-28"
+      style={{
+        backgroundImage: `linear-gradient(rgba(252, 248, 241, 0.88), rgba(252, 248, 241, 0.88)), url(${import.meta.env.BASE_URL}img/11-texture-tile.jpg)`,
+        backgroundSize: 'auto, 480px 480px',
+        backgroundRepeat: 'no-repeat, repeat',
+      }}
+    >
       <div className="relative mx-auto max-w-6xl">
         <motion.h2
           {...fadeUp(0)}
@@ -38,7 +47,7 @@ export default function Food() {
               <img
                 src={`${import.meta.env.BASE_URL}img/${dayArt[i]}`}
                 alt=""
-                className="mb-5 aspect-[16/9] w-full rounded-xl bg-paper-card object-contain"
+                className="mb-5 h-44 w-full rounded-xl object-cover shadow-card"
                 loading="lazy"
               />
               <h3 className="font-display text-xl font-semibold text-ink">{d.day}</h3>

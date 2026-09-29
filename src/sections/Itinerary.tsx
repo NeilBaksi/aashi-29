@@ -126,11 +126,11 @@ export default function Itinerary() {
               {activeDay.subheading}
             </p>
 
-            <div className="mt-6 overflow-hidden rounded-2xl bg-paper-card shadow-card">
+            <div className="mt-6 overflow-hidden rounded-2xl shadow-card">
               <img
                 src={`${import.meta.env.BASE_URL}img/${DAY_ART[activeDay.id].src}`}
                 alt={DAY_ART[activeDay.id].alt}
-                className="aspect-[16/7] w-full bg-paper-card object-contain sm:aspect-[2.4/1]"
+                className="h-48 w-full object-cover sm:h-56"
                 loading="lazy"
               />
             </div>
@@ -139,6 +139,13 @@ export default function Itinerary() {
               {activeDay.items.map((item, i) => {
                 const isNow = happeningNow?.item === item
                 const href = item.href ? links[item.href as keyof typeof links] : undefined
+                const beatImage = activeDay.id === 'sat'
+                  ? item.text.startsWith('BIRTHDAY DINNER')
+                    ? '06-birthday-dinner.jpg'
+                    : item.text.startsWith('🎧 AFTER DINNER')
+                      ? '07-after-dinner.jpg'
+                      : null
+                  : null
                 return (
                   <motion.li
                     key={`${activeDay.id}-${i}`}
@@ -162,19 +169,29 @@ export default function Itinerary() {
                         isNow && 'border border-apricot-deep bg-paper-card shadow-card',
                       )}
                     >
-                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                        {item.time && (
-                          <span className="font-display text-sm text-ink-soft [font-variant-numeric:tabular-nums]">
-                            {item.time}
+                      <div className={clsx('flex gap-4', beatImage ? 'items-center justify-between' : 'items-baseline')}>
+                        <div className="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
+                          {item.time && (
+                            <span className="font-display text-sm text-ink-soft [font-variant-numeric:tabular-nums]">
+                              {item.time}
+                            </span>
+                          )}
+                          <span className={clsx('text-ink', item.time ? 'font-medium' : 'text-sm text-ink-soft')}>
+                            {item.text}
                           </span>
-                        )}
-                        <span className={clsx('text-ink', item.time ? 'font-medium' : 'text-sm text-ink-soft')}>
-                          {item.text}
-                        </span>
-                        {isNow && (
-                          <span className="rounded-full bg-apricot-deep px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-paper">
-                            Happening now
-                          </span>
+                          {isNow && (
+                            <span className="rounded-full bg-apricot-deep px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-paper">
+                              Happening now
+                            </span>
+                          )}
+                        </div>
+                        {beatImage && (
+                          <img
+                            src={`${import.meta.env.BASE_URL}img/${beatImage}`}
+                            alt=""
+                            className="h-20 w-20 shrink-0 rounded-lg object-cover shadow-card"
+                            loading="lazy"
+                          />
                         )}
                       </div>
                       {href && (

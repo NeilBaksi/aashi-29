@@ -16,7 +16,12 @@ const fadeUp = (i: number) => ({
 export default function Hero() {
 	return (
 		<section id="home" aria-labelledby="hero-heading" className="grain relative overflow-hidden bg-paper px-5 pb-20 pt-28 md:pb-28 md:pt-36">
-			<div className="relative mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center md:gap-16">
+			<img
+				src={`${import.meta.env.BASE_URL}img/01-hero-backdrop.jpg`}
+				alt=""
+				className="absolute inset-0 h-full w-full object-cover opacity-35"
+			/>
+			<div className="relative z-10 mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center md:gap-16">
 				{/* Photo — mobile: stacked below text, full width. Desktop: right side, tilted/framed. */}
 				<motion.div {...fadeUp(0)} className="order-2">
 					<div className="mx-auto max-w-sm -rotate-3 rounded-2xl border-8 border-paper-card bg-paper-card p-2 shadow-card md:mx-0 md:max-w-md">
